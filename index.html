@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Abhishek Dubey | Backend Software Engineer</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
+body{font-family:Arial,sans-serif;background:#0b1120;color:#fff;line-height:1.6}
+header{position:fixed;top:0;width:100%;display:flex;justify-content:space-between;align-items:center;
+padding:18px 8%;background:rgba(11,17,32,.9);backdrop-filter:blur(10px);z-index:1000}
+nav a{color:#cbd5e1;text-decoration:none;margin-left:20px}
+nav a:hover{color:#38bdf8}
+.btn{display:inline-block;padding:12px 22px;background:#0ea5e9;color:#fff;border-radius:8px;
+text-decoration:none;margin-right:10px}
+.btn.outline{background:transparent;border:1px solid #38bdf8}
+section{padding:90px 8%}
+.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.hero h1{font-size:56px}
+.hero h2{color:#38bdf8;margin:10px 0}
+.badges span{display:inline-block;padding:8px 14px;margin:5px;background:#1e293b;border-radius:999px}
+.card{background:#111827;border:1px solid #1f2937;border-radius:16px;padding:25px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.timeline .item{border-left:3px solid #38bdf8;padding-left:20px;margin:25px 0}
+footer{text-align:center;padding:30px;background:#111827;color:#94a3b8}
+@media(max-width:900px){
+.hero{grid-template-columns:1fr}
+.hero h1{font-size:42px}
+header{flex-direction:column;gap:12px}
+}
+</style>
+</head>
+<body>
+
+<header>
+<h2>Abhishek Dubey</h2>
+<nav>
+<a href="#about">About</a>
+<a href="#experience">Experience</a>
+<a href="#projects">Projects</a>
+<a href="#skills">Skills</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
+
+<section class="hero">
+<div>
+<p>👋 Hello, I'm</p>
+<h1>Abhishek Dubey</h1>
+<h2>Backend Software Engineer</h2>
+<p>
+Building scalable backend applications using Java, Spring Boot, MongoDB,
+Redis and Elasticsearch. Passionate about system design, clean architecture
+and high-performance APIs.
+</p><br>
+<a class="btn" href="#projects">View Projects</a>
+<a class="btn outline" href="#">Download Resume</a>
+
+<div class="badges" style="margin-top:25px">
+<span>Java</span>
+<span>Spring Boot</span>
+<span>MongoDB</span>
+<span>Redis</span>
+<span>Elasticsearch</span>
+<span>Docker</span>
+</div>
+</div>
+
+<div class="card">
+<pre style="color:#86efac;overflow:auto">
+@Service
+public class AbhishekDubey {
+
+    private final String role =
+        "Backend Software Engineer";
+
+    private final String company =
+        "Times Internet";
+
+    private final List<String> skills =
+        List.of(
+            "Java",
+            "Spring Boot",
+            "MongoDB",
+            "Redis",
+            "Elasticsearch"
+        );
+
+    public String introduce() {
+        return "Hi, I'm Abhishek Dubey 👋";
+    }
+}
+</pre>
+</div>
+</section>
+
+<section id="about">
+<h2>About Me</h2><br>
+<div class="card">
+<p>Backend Software Engineer with experience in Java, Spring Boot, REST APIs,
+MongoDB, Redis and Elasticsearch. I enjoy building scalable systems,
+optimizing APIs and learning distributed system design.</p>
+</div>
+</section>
+
+<section id="experience">
+<h2>Experience</h2>
+<div class="timeline">
+<div class="item">
+<h3>Software Engineer • Times Internet</h3>
+<p>Worked on backend APIs, Elasticsearch integration, feed services,
+monitoring systems and performance improvements.</p>
+</div>
+<div class="item">
+<h3>Associate Software Engineer • Nagarro</h3>
+<p>Worked with Java and Spring Boot while strengthening backend fundamentals.</p>
+</div>
+</div>
+</section>
+
+<section id="projects">
+<h2>Projects</h2><br>
+<div class="grid">
+<div class="card"><h3>Feed Monitoring System</h3><p>Detect stale feeds and notify stakeholders.</p></div>
+<div class="card"><h3>Elasticsearch Integration</h3><p>Search APIs with optimized queries.</p></div>
+<div class="card"><h3>Portfolio Website</h3><p>Hosted using GitHub Pages.</p></div>
+</div>
+</section>
+
+<section id="skills">
+<h2>Skills</h2><br>
+<div class="grid">
+<div class="card">Java</div>
+<div class="card">Spring Boot</div>
+<div class="card">MongoDB</div>
+<div class="card">Redis</div>
+<div class="card">Elasticsearch</div>
+<div class="card">Docker</div>
+<div class="card">Git</div>
+<div class="card">Linux</div>
+</div>
+</section>
+
+<section id="contact">
+<h2>Contact</h2><br>
+<div class="card">
+<p>Email: your@email.com</p>
+<p>GitHub: github.com/yourusername</p>
+<p>LinkedIn: linkedin.com/in/yourprofile</p>
+</div>
+</section>
+
+<footer>
+© <span id="year"></span> Abhishek Dubey • Built with HTML, CSS & JavaScript
+</footer>
+
+<script>
+document.getElementById("year").textContent=new Date().getFullYear();
+
+const observer=new IntersectionObserver(entries=>{
+ entries.forEach(e=>{
+   if(e.isIntersecting){
+      e.target.animate([
+        {opacity:0,transform:"translateY(40px)"},
+        {opacity:1,transform:"translateY(0)"}
+      ],{duration:700,fill:"forwards"});
+      observer.unobserve(e.target);
+   }
+ });
+});
+
+document.querySelectorAll("section,.card").forEach(el=>observer.observe(el));
+</script>
+
+</body>
+</html>
